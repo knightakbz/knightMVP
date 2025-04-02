@@ -1,4 +1,4 @@
-package com.example.knightmvp.server.interceptor
+package com.example.knightmvp.server.logger
 
 import android.util.Log
 import com.google.gson.GsonBuilder
