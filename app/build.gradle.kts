@@ -21,6 +21,17 @@ android {
 
     buildTypes {
         release {
+            buildConfigField("String", "SERVER_URL", "\"https://api.open-meteo.com/v1\"")
+
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            buildConfigField("String", "SERVER_URL", "\"https://api.open-meteo.com/v1\"")
+
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,6 +47,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 }
@@ -53,6 +65,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    // region Network
+    implementation(libs.retrofit)
+    implementation(libs.logging.interceptor)
+    implementation (libs.google.gson)
+    // endregion
+
+    //Rx
+    implementation(libs.rxjava)
 }
