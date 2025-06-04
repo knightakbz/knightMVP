@@ -92,4 +92,9 @@ dependencies {
 
     //Rx
     implementation(libs.rxjava)
+
+    //Moxy
+    implementation (libs.moxy)
+    ksp(libs.moxy.compiler)
+
 }
