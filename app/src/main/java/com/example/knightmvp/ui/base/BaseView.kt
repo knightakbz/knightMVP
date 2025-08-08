@@ -1,6 +1,5 @@
 package com.example.knightmvp.ui.base
 
-import moxy.MvpView
-
-interface BaseView : MvpView {
+interface BaseView {
+    // Базовые методы для View (можно расширять)
 }
