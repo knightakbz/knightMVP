@@ -49,7 +49,6 @@ android {
     }
     buildFeatures {
         buildConfig = true
-        viewBinding = true
     }
 }
 
@@ -58,29 +57,36 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+
+
     implementation(libs.androidx.ui.graphics.android)
     implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //Compouse
+    // Compouse
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended)
     debugImplementation(libs.ui.tooling)
+
+    // Compouse navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Анимации для AnimatedNavHost
+    implementation(libs.accompanist.navigation.animation)
 
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+    // Navigation Compose (уже подключен выше)
 
     // region Network
     implementation(libs.retrofit)
@@ -90,11 +96,8 @@ dependencies {
     implementation (libs.squareup.converter.gson)
     // endregion
 
-    //Rx
-    implementation(libs.rxjava)
 
-    //Moxy
-    implementation (libs.moxy)
-    ksp(libs.moxy.compiler)
+
+
 
 }
